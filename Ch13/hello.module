@@ -1,0 +1,36 @@
+<?php
+
+ /* implements hook_block_info() */
+ function hello_block_info() { 
+
+    $blocks['helloworld'] = array(
+       'info' => t('Hello Backdrop World!'),
+       'description' => t('Prints Hello Backdrop World.'),
+    );
+
+    return $blocks;
+
+ }
+
+ /* Implements hook_block_view() */
+ function hello_block_view($delta, $seetings, $contexts) { 
+
+    $block = array();
+
+    switch ($delta) {
+      case 'helloworld':
+        $block['subject'] = t('Say it!');
+        $block['content'] = hello_say_hello();
+      break;
+    }
+
+    return $block;
+
+ }
+
+ /* Returns text that is displayed in the block */
+ function hello_say_hello() { 
+
+    return "Hello Backdrop World!";
+
+ }

@@ -1,0 +1,6 @@
+name = Hello
+description = My first Backdrop module
+backdrop = 1.x
+package = Awesome Modules
+type = module
+version = BACKDROP_VERSION
